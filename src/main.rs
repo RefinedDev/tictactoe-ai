@@ -78,23 +78,19 @@ pub fn start_ai(player_character: &String) -> &str
         if player_turn {
             loop {
                 let rannumbforrow = thread_rng().gen_range(1..4);
-                if rannumbforrow == 1 {
-                    let random_index_from_row = thread_rng().gen_range(0..firstrow.len());
+                let random_index_from_row = thread_rng().gen_range(0..3);
                     
+                if rannumbforrow == 1 {
                     if &firstrow[random_index_from_row] == "||"{
                         let _ = mem::replace(&mut firstrow[random_index_from_row], player_character.to_owned());
                         break;
                     }
                 }else if rannumbforrow == 2 {
-                    let random_index_from_row = thread_rng().gen_range(0..secondrow.len());
-                    
                     if &secondrow[random_index_from_row] == "||"{
                         let _ = mem::replace(&mut secondrow[random_index_from_row], player_character.to_owned());
                         break;
                     }
                 }else if rannumbforrow == 3 {
-                    let random_index_from_row = thread_rng().gen_range(0..thirdrow.len());
-                    
                     if &thirdrow[random_index_from_row] == "||"{
                         let _ = mem::replace(&mut thirdrow[random_index_from_row], player_character.to_owned());
                         break;
@@ -106,23 +102,19 @@ pub fn start_ai(player_character: &String) -> &str
         }else {
            loop {
                 let rannumbforrow = thread_rng().gen_range(1..4);
+                let random_index_from_row = thread_rng().gen_range(0..3);
+
                 if rannumbforrow == 1 {
-                    let random_index_from_row = thread_rng().gen_range(0..firstrow.len());
-                    
                     if &firstrow[random_index_from_row] == "||"{
                         let _ = mem::replace(&mut firstrow[random_index_from_row], opponent_character.to_owned());
                         break;
                     }
                 }else if rannumbforrow == 2 {
-                    let random_index_from_row = thread_rng().gen_range(0..secondrow.len());
-                    
                     if &secondrow[random_index_from_row] == "||"{
                         let _ = mem::replace(&mut secondrow[random_index_from_row], opponent_character.to_owned());
                         break;
                     }
                 }else if rannumbforrow == 3 {
-                    let random_index_from_row = thread_rng().gen_range(0..thirdrow.len());
-                    
                     if &thirdrow[random_index_from_row] == "||"{
                         let _ = mem::replace(&mut thirdrow[random_index_from_row], opponent_character.to_owned());
                         break;
